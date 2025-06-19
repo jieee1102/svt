@@ -164,8 +164,12 @@
 
   .header-absolute .login,
   .header-absolute .cart-icon {
-    position: static;
-    transform: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   .header-absolute .logo img {
