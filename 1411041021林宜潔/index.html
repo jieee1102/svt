@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayo5 | 手工編織小物</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --main-color: #d8c2c2;
+      --accent-color: #b4c4ba;
+      --second-accent: #a8b4c4;
+      --text-color: #333;
+      --bg-color: #fffaf7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .header-absolute {
+      position: relative;
+      background-color: var(--main-color);
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .header-absolute .logo img {
+      height: 300px;
+      max-height: 100%;
+      margin-top: 25px;
+    }
+
+    .header-absolute .login,
+    .header-absolute .cart-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .header-absolute .login {
+      left: 1.5rem;
+    }
+
+    .header-absolute .cart-icon {
+      right: 1.5rem;
+    }
+
+    .login img {
+      height: 60px;
+    }
+
+    .cart-icon img {
+      height: 130px;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      border-top: 1px solid var(--second-accent);
+      border-bottom: 1px solid var(--second-accent);
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      padding: 0.5rem 0;
+    }
+
+    .main-nav li {
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    .main-nav li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 25%;
+      bottom: 25%;
+      width: 1px;
+      background-color: var(--second-accent);
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+
+    .hero-slider {
+      width: 100%;
+      max-width: 550px;
+      margin: 2rem auto;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .hero-slider .slide {
+      width: 100%;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-slider .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .hero-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-intro {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .brand-intro h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      max-height: 120px;  
+      background-color: var(--main-color);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .line-icon {
+      height: 80px;
+      margin-bottom: -1.5rem;
+      margin-top: -1rem;
+    }
+  </style>
+  <script>
+    let current = 0;
+    window.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.hero-slider .slide');
+      function showSlide(i) {
+        slides.forEach((slide, index) => {
+          slide.classList.remove('active');
+          if (index === i) slide.classList.add('active');
+        });
+      }
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 5000); 
+      showSlide(current);
+    });
+  </script>
+</head>
+<body>
+  <header class="header-absolute">
+    <div class="login">
+        <img src="images/log-in.png" alt="登入圖示">
+      </div>
+    <div class="logo">
+      <img src="images/logo.png" alt="Mayo5 logo">
+    </div>
+    <div class="cart-icon">
+      <img src="images/cart.png" alt="購物車">
+    </div>
+  </header>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="products.html">商品總覽</a></li>
+        <li><a href="charms.html">編織吊飾</a></li>
+        <li><a href="clothes.html">編織衣物</a></li>
+        <li><a href="bags.html">編織娃包</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+      </ul>
+    </nav>
+
+  <section class="hero-slider">
+    <div class="slide"><img src="images/play1.JPG" alt="主打商品1"></div>
+    <div class="slide"><img src="images/play2.JPG" alt="主打商品2"></div>
+    <div class="slide"><img src="images/play3.JPG" alt="主打商品3"></div>
+  </section>
+
+  <section class="brand-intro">
+    <h2>品牌簡介</h2>
+    <p>
+      Mayo5 這個名字的來源是合作朋友選擇了她喜歡的數字的西班牙文，我們主要是販售清新可愛風格的手工編織小物，希望透過品牌可以讓喜歡手工製品，或有需求的人提供一個不錯的選擇，也為大家忙碌的生活添加一點小溫暖！
+    </p>
+  </section>
+
+  <footer>
+      <img src="images/line.png" alt="LINE 圖示" class="line-icon">
+      <div>© Mayo5</div>
+  </footer>
+</body>
+</html>
