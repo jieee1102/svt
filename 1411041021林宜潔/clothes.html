@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>編織衣物 | Mayo5</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .header-absolute {
+      position: relative;
+      background-color: #d8c2c2;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .header-absolute .logo img {
+      height: 300px;
+      max-height: 100%;
+      margin-top: 25px;
+    }
+
+    .header-absolute .login,
+    .header-absolute .cart-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .header-absolute .login {
+      left: 1.5rem;
+    }
+
+    .header-absolute .cart-icon {
+      right: 1.5rem;
+    }
+
+    .login img {
+      height: 60px;
+    }
+
+    .cart-icon img {
+      height: 130px;
+    }
+
+    body {
+      font-family: "微軟正黑體", sans-serif;
+      background-color: #fffaf7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer {
+      background-color: #d8c2c2;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .line-icon {
+      height: 80px;
+      margin-bottom: -1.5rem;
+      margin-top: -1rem;
+    }
+
+    .product-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding-top: 3rem;
+      padding-bottom: 9rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background-color: #f8f4f0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+
+    .category-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: 5rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-absolute">
+    <div class="login">
+        <img src="images/log-in.png" alt="登入圖示">
+      </div>
+    <div class="logo">
+      <img src="images/logo.png" alt="Mayo5 logo">
+    </div>
+    <div class="cart-icon">
+      <img src="images/cart.png" alt="購物車">
+    </div>
+  </header>
+
+  <main>
+    <h2 class="category-title">編織衣物</h2>
+    <div class="product-section">
+      <div class="product">
+        <img src="images/clothes1.JPG" alt="奶茶貓耳帽">
+        <h3>奶茶貓耳帽</h3>
+      </div>
+      <div class="product">
+        <img src="images/clothes2.JPG" alt="莫蘭迪藍毛帽">
+        <h3>莫蘭迪藍毛帽</h3>
+      </div>
+      <div class="product">
+        <img src="images/clothes3.JPG" alt="小藍莓漁夫帽">
+        <h3>小藍莓漁夫帽</h3>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <img src="images/line.png" alt="LINE 圖示" class="line-icon">
+    <div>© Mayo5</div>
+  </footer>
+</body>
+</html>
